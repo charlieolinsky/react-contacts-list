@@ -6,38 +6,42 @@ import ContactCard from './ContactCard';
 
 
 const App = () => {
+  
+  const contacts = [
+    {
+      imageURL:"https://via.placeholder.com/150", 
+      name:"Jenny Han", 
+      email:"jenny.han@notreal.com", 
+      age: 25
+    },
+    {
+      imageURL:"https://via.placeholder.com/150", 
+      name:"Paul Rudd", 
+      email:"paul.redguy@notreal.com", 
+      age: 34
+    },
+    {
+      imageURL:"https://via.placeholder.com/150", 
+      name:"Jordy Checo", 
+      email:"jcheco623@gmail.com", 
+      age: 21
+    }
+  ];
+
   return(
       <div>
-        <ContactCard/>
-        <ContactCard/>
-        <ContactCard/>
+        {contacts.map((contact, index)=>{
+            return(
+              <ContactCard 
+                key={index}
+                imageURL={contact.imageURL} 
+                name={contact.name}
+                email={contact.email}
+                age={contact.age} />
+            )
+        })}
       </div>
   )
 }
 
 export default App;
-
-
-
-
-/*
-const App = () => {
-
-  const title = "Hello React!"
-  
-  return(
-    //The two below statements are equivalent: 
-
-    //<div>This is my first react component!</div>
-    //React.createElement("div", null, "This is my first react component!")
-
-    <div>
-      <h1>{title}</h1>
-      <h2 onClick={()=> alert("you clicked the text!")}> This is my first react component, its dynamic</h2> 
-
-    </div>
-
-
-  )
-}
-*/
