@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'; 
-//Import the style sheet
 import './App.css'; 
-//Import ContactCard
 import ContactCard from './ContactCard';
+import Register from './Register'; 
 
 
 const App = () => {
@@ -31,7 +30,10 @@ const App = () => {
                 age={result.dob.age} />
             )
         })}
+
+        <Register />
       </div>
+
   )
 }
 
